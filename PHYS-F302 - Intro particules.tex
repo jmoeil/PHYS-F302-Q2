@@ -1,0 +1,143 @@
+\documentclass[11pt,oneside,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{cancel}
+\usepackage{fancyhdr,fancyvrb}
+\usepackage{lastpage}
+\usepackage{bm}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{calrsfs}
+\usepackage{wasysym}
+\usepackage{dsfont}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{pgfplotstable}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{subfiles}
+\usepackage{systeme}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{lmodern}
+\usepackage{chngcntr}
+\usepackage{textcomp}
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=1cm, right=1cm}
+\pgfplotsset{width=10cm,compat=1.16}
+
+% Counter stuff
+\counterwithin{equation}{section}
+\setcounter{tocdepth}{3}
+
+% Random utilities...
+\newcommand{\ti}{\ensuremath{\times}}
+\newcommand{\h}{\ensuremath{\hbar}}
+\newcommand{\med}{\ensuremath\cdot}
+\newcommand\au[2]{\left.#1\right|_{#2}}
+\renewcommand{\d}{\mathrm{d}}
+
+% Special formatting for paragraphs
+\titleformat{\paragraph}
+  {\normalfont\normalsize\bfseries}
+  {\theparagraph}
+  {1em}
+  {}
+\titlespacing*{\paragraph}
+  {0pt}
+  {3.25ex plus 1ex minus .2ex}
+  {1.5ex plus .2ex}
+
+% Gestion of headers and footers
+\pagestyle{fancy}
+\renewcommand\headrulewidth{1pt}
+\renewcommand\footrulewidth{1pt}
+\fancyfoot[L]{MOEIL Juian}
+\fancyfoot[C]{Page \thepage/\pageref{LastPage}}
+\fancyfoot[R]{Prof. Frank Ferrari}
+
+% Allow usage of smileys
+%\newfontfamily\DejaSans{DejaVu Sans}
+
+% Defining new theorem environments
+\newtheorem{theorem}{Théorème}[section]
+\newtheorem{definition}[theorem]{Définition}
+\newtheorem{lemma}[theorem]{Lemme}
+\newtheorem{property}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollaire}
+\newtheorem{remark}[theorem]{Remarque}
+\newtheorem{reminder}[theorem]{Rappel théorique}
+\newtheorem{example}[theorem]{Exemple}
+
+\renewcommand{\proofname}{Preuve}
+\renewcommand{\qedsymbol}{\ensuremath{\blacksquare}}
+
+% Setup of hyperref features
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=purple,
+  pdftitle="DM202122 - MOEIL Juian"
+}
+
+% Definition boite grise avec couleur grise définie
+\definecolor{BGgris}{RGB}{222,230,230}
+\newcommand\bg[2]{%
+  \begin{center}%
+    \fcolorbox{white}{BGgris}{%
+      \parbox{.9\linewidth}{%
+        \begin{large} \textit{#1} \end{large} \\%
+        #2%
+      }%
+    }%
+  \end{center}%
+}
+
+% Boite d'alerte
+\definecolor{BGorange}{RGB}{255, 216, 154}
+\newcommand\probleme[1]{%
+  \begin{center}%
+    \fcolorbox{white}{BGorange}{%
+      \parbox{.9\linewidth}{%
+        \begin{large} \textbf{Problème} \end{large} \\%
+        #1%
+      }%
+    }%
+  \end{center}%
+}
+
+\setlength{\fboxsep}{2em}
+
+\title{%
+  \textbf{PHYS-F302 - Mécanique Quantique relativiste} \\
+  \textit{Introduction à la physique des particules}
+}
+\author{%
+  \href{mailto:juian.moeil@ulb.be}{Moeil Juian}\\
+  \href{mailto:alexandre.hallemans@ulb.be}{Hallemans Alexandre}
+}
+\date{%
+  \textbf{Université Libre de Bruxelles} \\
+  \emph{Année académique 2021-2022}\\
+  \today
+}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \tableofcontents
+    \newpage
+
+    \subfile{Motivations/motivations.tex}
+
+
+\end{document}
